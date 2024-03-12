@@ -1,4 +1,6 @@
 import React from "react";
+import { Saludo } from "./saludo";
+import { EdicionNombre } from "./edicion-nombre";
 interface Usuario {
   nombre: string;
   apellidos: string;
@@ -10,11 +12,16 @@ export const App = () => {
     nombre: "Braulio",
     apellidos: "Perez",
     ciudad: "Madrid",
-  })
-  
+  });
+
+  const [nombre, setNombre] = React.useState("Lemoncode")
 
   return (
     <>
+      <Saludo nombre ={nombre}/>
+      <EdicionNombre nombreInicial = {nombre} onActualizarNombre= {setNombre} />
+
+
       <h1>Nombre: {usuario.nombre}</h1>
       <input
         value = {usuario.nombre}
