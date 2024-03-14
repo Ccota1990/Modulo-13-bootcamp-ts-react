@@ -1,0 +1,2 @@
+
+export * from './detalle-miembro'
