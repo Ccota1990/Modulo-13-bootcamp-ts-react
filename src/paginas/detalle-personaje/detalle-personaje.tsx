@@ -2,6 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { getPersonajeById } from "./detalle-personaje-api";
 import { Personaje, crearPersonajeVacio } from "./detallle-modelo-personaje";
+import { Layout } from "@/layouts";
 
 export const DetallePersonaje: React.FC = () => {
     const { id } = useParams<{ id: string }>();
@@ -18,6 +19,8 @@ export const DetallePersonaje: React.FC = () => {
             }
     }, []);
     return (
+        <Layout>
+
         <div className="contenedor-detalle">
             <h2>Detalle del personaje</h2>
             <img src={`http://localhost:3000/${personaje.imagen}`} />
@@ -32,6 +35,7 @@ export const DetallePersonaje: React.FC = () => {
                 {personaje.especialidad}
             </p>
         </div>
+        </Layout>
         );
     
     };
