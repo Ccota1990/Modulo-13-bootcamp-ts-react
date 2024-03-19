@@ -1,5 +1,5 @@
 import React from "react";
-import { Miembro } from "../modelo";
+import { Miembro } from "../../modelo";
 import { MiembroFila } from "./miembro-fila";
 import { obtenerMiembros } from "./miembro.api";
 

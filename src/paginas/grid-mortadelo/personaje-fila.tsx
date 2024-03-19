@@ -1,6 +1,7 @@
 import React from "react";
 import { Personaje } from "./modelo";
-import { Link } from "react-router-dom";
+import { Link, generatePath } from "react-router-dom";
+import { rutas } from "@/constantes";
 
 interface Props {
     personaje: Personaje;
@@ -12,7 +13,7 @@ export const PersonajeFila: React.FC<Props> = (props) => {
     return (
     <React.Fragment>
         <img src={`http://localhost:3000/${personaje.imagen}`} />
-        <Link to={`/personaje/${personaje.id}`}>{personaje.nombre}</Link>
+        <Link to={generatePath(rutas.DETALLE_PERSONAJE, {id: personaje.id})}>{personaje.nombre}</Link>
         <span>{personaje.especialidad}</span>
     </React.Fragment>
     );
