@@ -1,10 +1,10 @@
-
-
+import { MiContextoProvider } from "./core/contexto";
 import { Rutas } from "./rutas";
 
 export const App = () => {
-  
   return (
-    <Rutas />
+    <MiContextoProvider>
+      <Rutas />
+    </MiContextoProvider>
     )   
 };
